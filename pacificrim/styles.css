@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+header {
+    background-color: #1a1a2e;
+    padding: 15px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 50px;
+}
+
+h1, h2 {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+nav {
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+    border-radius: 15px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #00aaff;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+    animation: navGlow 2s infinite alternate;
+}
+
+nav ul li a:hover {
+    background: #00aaff;
+    color: #1a1a2e;
+    transform: scale(1.1);
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+}
+
+h2 {
+    color: #00aaff;
+}
+
+.content-image {
+    width: 100%;
+    max-width: 500;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
+    animation: zoomIn 1s ease-in-out;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1a1a2e;
+    margin-top: 20px;
+}       
+body {
+    font-family: 'Orbitron', sans-serif;
+    animation: fadeIn 1.5s ease-in-out;
+    background: url('kepek/hatter.jpg') no-repeat center center fixed;
+    background-position: auto;
+    background-size: scale(2.2);
+    animation: backgroundAnimation 15s infinite alternate ease-in-out;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+            font-weight: 700;
+            text-transform: uppercase;
+}
+
+.character-picker {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    
+}
+
+.character-item {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.7);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 5px;
+    animation: zoomIn 1s ease-in-out;
+    max-width: 75%;
+}
+
+.character-description {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.character-item:hover .character-description {
+    opacity: 1;
+}
+
+.character-item img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.character-item:hover {
+    transform: scale(1.1);
+}
+
+.character-name {
+    font-size: 15px;
+    font-weight: bold;
+    color: #00aaff;
+    margin-top: 10px;
+    text-align: center;
+}
+.character-item.active .character-description {
+    display: block;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes imageHover {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    nav ul.active {
+        display: block;
+    }
+}
+@media (max-width: 550px) {
+    .character-picker {
+        grid-template-columns: 1fr;
+    }
+}
